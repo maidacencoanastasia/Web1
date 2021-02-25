@@ -50,3 +50,8 @@ let restantStudents = Students.filter((s) => s.average < 5)
 console.log(
   `Students with mark less then 5 are ${minStudents} with mark ${minAvg}`
 );
+
+let sortStudent = Students.sort((s1, s2) => s2.average - s1.average);
+//console.dir(sortStudent)
+sortStudent.forEach((element) => console.log(element));
+
