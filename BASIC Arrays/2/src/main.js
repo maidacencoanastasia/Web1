@@ -1,59 +1,56 @@
-
 // const calculateFunction = () => {
 //     return 2 * x + y;
 // }
 
 // console.log("2x+y= ", calculateFunction())
 
-console.log("Simple console.log output");
-let n = 10;
-let arr = [];
-for (let i = 0; i < n; i++) {
-    arr[i] = Math.floor(Math.random() * (100 - 1)) + 1
-}
+let Students = [
+  {
+    name: "Maria",
+    marks: [9, 4, 8, 10, 9],
+  },
+  {
+    name: "Oleg",
+    marks: [4, 10, 8, 10, 9],
+  },
+  {
+    name: "Victor",
+    marks: [3, 3, 4, 10, 4],
+  },
+  {
+    name: "Ana",
+    marks: [9, 5, 8, 10, 9],
+  },
+];
 
-console.log(arr)
-// Самый паростой вывод
-
-console.log("Simple for output");
-for (let i = 0; i < n; i++) {
-    console.log(arr[i])
-}
-console.log("Simple while output");
-let counter = n;
-while(counter>=0){
-    --counter;
-    console.log(arr[counter]); // Всегда будет один Undefind
-}
-
-console.log("Simple do-while output");
-let kounter = 0;
-do {
-    console.log(arr[kounter]);
-    kounter++;
-}while (kounter < n)
-
-console.log("for of output");
-for (const element of arr) {
-  console.log(element);
-}
-
-console.log("for in output");
-for (let x in arr) {
-    console.log(arr[x]);
-}
-console.log("forEach output");
-arr.forEach(element => console.log(element));
-
-console.log("map output");
-var arr2 = arr.map(function(num) {
-  return num;
-});
-console.log(arr2);
-
-console.log("for await output");
-(async function() {
-  for await (let num of arr) {
-    console.log(num);
+let average;
+let count = Students.length;
+for (let i = 0; i < count; i++) {
+  let marks = Students[i]["marks"];
+  let total = 0;
+  for (let j = 0; j < marks.length; j++) {
+    total += marks[j];
   }
-})();
+  average = total / marks.length;
+  Students[i].average = average;
+  let msg = Students[i]["name"] + " has average mark: " + average;
+  console.log(msg);
+}
+Students.sort((s1, s2) => s2.average - s1.average);
+let topAvg = Students[0].average;
+let topStudents = Students.filter((s) => s.average == topAvg)
+  .map((s) => s.name)
+  .join(", ");
+console.log(`Top Students are ${topStudents} with mark ${topAvg}`);
+
+Students.sort((s1, s2) => s1.average - s2.average);
+let minAvg = Students[0].average;
+let minStudents = Students.filter((s) => s.average == minAvg)
+  .map((s) => s.name)
+  .join(", ");
+console.log(`Dounshifter Students are ${minStudents} with mark ${minAvg}`);
+
+let restantStudents = Students.filter((s) => s.average < 5)
+  .map((s) => s.name)
+  .join(", ");
+console.log(`Students with mark less then 5 are ${minStudents} with mark ${minAvg}`);
