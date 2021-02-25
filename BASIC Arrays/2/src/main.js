@@ -1,9 +1,3 @@
-// const calculateFunction = () => {
-//     return 2 * x + y;
-// }
-
-// console.log("2x+y= ", calculateFunction())
-
 let Students = [
   {
     name: "Maria",
@@ -53,4 +47,6 @@ console.log(`Dounshifter Students are ${minStudents} with mark ${minAvg}`);
 let restantStudents = Students.filter((s) => s.average < 5)
   .map((s) => s.name)
   .join(", ");
-console.log(`Students with mark less then 5 are ${minStudents} with mark ${minAvg}`);
+console.log(
+  `Students with mark less then 5 are ${minStudents} with mark ${minAvg}`
+);
