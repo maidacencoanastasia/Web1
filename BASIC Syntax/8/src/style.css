@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
 	padding: 0px;
 }
@@ -6,4 +7,14 @@ input{
 }
 div{
 	margin-top: 20px;
+=======
+*{
+	padding: 0px;
+}
+input{
+	font-size: 24px;
+}
+div{
+	margin-top: 20px;
+>>>>>>> 845cbaa193b88f53b336e4f40d0061b946513912
 }
