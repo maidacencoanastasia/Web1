@@ -22,7 +22,7 @@ class Dog extends Animal {
     constructor(food, location) {
         super(food, location);
         this.name = 'Dog';
-        this.noise = 'woof-woof';
+        this.noise = 'gaf-gaf';
     }
 
     makeNoise() {
@@ -54,7 +54,7 @@ class Horse extends Animal {
     constructor(food, location) {
         super(food, location);
         this.name = 'Horse';
-        this.noise = 'neigh';
+        this.noise = 'igogo';
     }
 
     makeNoise() {
